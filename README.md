@@ -39,14 +39,54 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
     * takes in arguments - rating, size of icons
     * on click - nothing happens
 ### Application pages
-1) cart.dart
-    * contains a list view of items that are present in cart.
-    * Takes data from StoreProducts and database.
-2) Home.dart
-    * contains 3 pages/tabs
+1) main.dart
+    * Reroutes to either loading or login screen depending on whether the user is logged in or not.
+2) cart.dart
+    * Contains a list view of items that are present in cart.
+    * Takes data from StoreProducts and database. [See API calls](#api-calls)
+    * User can click the button 'proceed to check out', then it shows the total price, and after purchasing the items, the items are cleared from cart, and pushed to the purchase history and user is sent to the products_page.dart
+    * uses the product cart card widget. [See custom widgets](#custom-widgets)
+3) home.dart
+    * Contains 3 pages/tabs:
         1) user_info.dart
         2) products_page.dart
         3) cart.dart
+    * User can switch between these 3 tabs using buttons that are present on the app bar
+4) loading.dart
+    * Contains a spinkit widget. [See external packages](#external-packages-used)
+    * Starts when the application just opens, gets all product data and then, pushes home.dart.
+5) login.dart
+    * Contains list view
+    * User can login using an existing account with google/email id and password
+    * If account does not exist (in database), it is automatically created using sign in with google
+    * Uses AuthObject. [See flutter services](#flutter-services)
+6) product.dart
+    * Contains a list view of all the product data available.
+    * Takes this data from StoreProducts and database. [See API calls](#api-calls)
+    * User can add and delete reviews that are posted by the user that is currently logged in.
+    * User can add items to cart.
+    * 'Add review' displays a dialog box through which the user can post the review, this dialog box uses the spinkit package. [See external packages](#external-packages-used)
+    * Uses the review card widget. [See custom widgets](#custom-widgets) 
+7) products_page.dart
+    * Contains a stack view containing a list view of all products (and filters), and a search bar.
+    * Gets data from StoreProducts and database. [See API calls](#api-calls)
+    * User can browse and filter items.
+    * item filtering is based on categories, plus one category 'all products'
+    * search bar also shows a preview of items that are going to be displayed after pressing the search button on the keyboard.
+    * The list view of all products uses the product cart widget. [See custom widgets](#custom-widgets)
+    * The search bar uses the floating search bar package. [See external packages](#external-packages-used)
+    * The search bar also uses the search bar card to display items. [See custom widget](#custom-widgets)
+8) sign_up.dart
+    * Contains a list view
+    * User can create a new account using email and password
+    * Uses AuthObject. [See flutter services](#flutter-services)
+9) user_info.dart
+    * Contains a list view of all user data
+    * Gets data from StoreProducts and database. [See API calls](#api-calls)
+    * User can sign out here, taken to the login screen right after
+    * User can also view number of purchases and all purchase related data here
+    * uses the product cart card widget. [See custom widgets](#custom-widgets)
+
 
 ### External packages used
 1) firebase_core - connecting to firebase
