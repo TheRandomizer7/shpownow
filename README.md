@@ -7,18 +7,6 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
 ## Features overview
  
 ## Project structure
-### External packages used
-1) firebase_core - connecting to firebase
-2) firebase_auth - to use firebase authentication
-3) google_sign_in - to use google sign in
-5) cloud_firestore - to use firestore database
-6) http - to make API calls
-7) flutter_spinkit - to use a loading screen widget
-8) flutter_rating_bar - to have a rating bar adjustable by user
-9) fluttertoast - to use toast messages
-10) animations - to use premade animations in flutter
-11) intl - to format date and time in the required format
-12) material_floating_search_bar - to have a search bar widget
 ### Custom classes/services
 #### Classes created to act like pointers
 (To access parent data inside of a child widget)  
@@ -51,3 +39,24 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
     * takes in arguments - rating, size of icons
     * on click - nothing happens
 ### Application pages
+1) cart.dart
+    * contains a list view of items that are present in cart.
+    * Takes data from StoreProducts and database.
+2) Home.dart
+    * contains 3 pages/tabs
+        1) user_info.dart
+        2) products_page.dart
+        3) cart.dart
+
+### External packages used
+1) firebase_core - connecting to firebase
+2) firebase_auth - to use firebase authentication
+3) google_sign_in - to use google sign in
+5) cloud_firestore - to use firestore database
+6) http - to make API calls
+7) flutter_spinkit - to use a loading screen widget
+8) flutter_rating_bar - to have a rating bar adjustable by user
+9) fluttertoast - to use toast messages
+10) animations - to use premade animations in flutter
+11) intl - to format date and time in the required format
+12) material_floating_search_bar - to have a search bar widget
