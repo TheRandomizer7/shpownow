@@ -251,7 +251,6 @@ class _ProductsPageState extends State<ProductsPage> {
                             id: product['id'],
                             reviewCount: product['review_count'],
                             rating: product['rating'],
-                            price: product['price'].toDouble(),
                           );
                         },
                         openBuilder: (context, action) {

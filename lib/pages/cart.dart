@@ -19,14 +19,9 @@ import 'package:flutter/material.dart';
 import 'package:shpownow/custom_widgets/product_cart_card.dart';
 import 'package:shpownow/pages/loading.dart';
 import 'package:shpownow/pages/product.dart';
+import 'package:shpownow/services/custom%20classes/item_data_in_cart.dart';
 import 'package:shpownow/services/flutter_services/firestore.dart';
 import 'package:shpownow/services/store_api.dart';
-
-class ItemDataInCart {
-  dynamic data;
-  ValueNotifier<int> length = ValueNotifier<int>(0);
-  ItemDataInCart({required this.data});
-}
 
 class CartPage extends StatefulWidget {
   @override

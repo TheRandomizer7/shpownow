@@ -19,6 +19,7 @@ import 'package:flutter/material.dart';
 import 'package:shpownow/pages/cart.dart';
 import 'package:shpownow/pages/products_page.dart';
 import 'package:shpownow/pages/user_info.dart';
+import 'package:shpownow/services/custom%20classes/item_data_in_cart.dart';
 import 'package:shpownow/services/flutter_services/firestore.dart';
 import 'package:shpownow/services/store_api.dart';
 

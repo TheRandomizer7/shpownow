@@ -4,15 +4,11 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shpownow/custom_widgets/review_card.dart';
 import 'package:shpownow/custom_widgets/star_rating_bar.dart';
+import 'package:shpownow/services/custom%20classes/review_data.dart';
 import 'package:shpownow/services/flutter_services/firestore.dart';
 import 'package:shpownow/services/store_api.dart';
 
 bool addReviewIsVisible = false;
-
-class Pointer {
-  dynamic updatedData;
-  Pointer(this.updatedData);
-}
 
 class Product extends StatefulWidget {
   final Map data;
@@ -25,7 +21,7 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
-  Pointer pointer = Pointer(null);
+  ReviewData reviewData= ReviewData(null);
   @override
   Widget build(BuildContext context) {
     Map data = widget.data;
@@ -33,11 +29,11 @@ class _ProductState extends State<Product> {
       data = (ModalRoute.of(context)!.settings.arguments as Map);
     }
 
-    if (pointer.updatedData == null) {
-      pointer.updatedData = data;
+    if (reviewData.updatedData == null) {
+      reviewData.updatedData = data;
     }
 
-    data = pointer.updatedData;
+    data = reviewData.updatedData;
 
     String title = data['title'];
     String image = data['image'];
@@ -196,7 +192,7 @@ class _ProductState extends State<Product> {
                       data['reviews'] = reviews;
                       data['rating'] = newRating;
                       data['review_count'] = newReviewCount;
-                      pointer.updatedData = data;
+                      reviewData.updatedData = data;
                     });
                   }
                 },
@@ -448,7 +444,7 @@ class _ProductState extends State<Product> {
                 showDelete: (data['uid'] == data['reviews'][tempIndex]['uid']),
                 index: tempIndex,
                 id: data['id'],
-                pointer: pointer,
+                reviewData: reviewData,
               );
             } else {
               return Container(

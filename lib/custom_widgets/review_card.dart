@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shpownow/custom_widgets/star_rating_bar.dart';
-import 'package:shpownow/pages/product.dart';
+import 'package:shpownow/services/custom%20classes/review_data.dart';
 import 'package:shpownow/services/flutter_services/firestore.dart';
 
 class ReviewCard extends StatefulWidget {
@@ -10,7 +10,7 @@ class ReviewCard extends StatefulWidget {
   final bool showDelete;
   final int index;
   final int id;
-  final Pointer pointer;
+  final ReviewData reviewData;
 
   ReviewCard(
       {required this.username,
@@ -19,7 +19,7 @@ class ReviewCard extends StatefulWidget {
       required this.showDelete,
       required this.index,
       required this.id,
-      required this.pointer});
+      required this.reviewData});
 
   @override
   _ReviewCardState createState() => _ReviewCardState();
@@ -102,11 +102,11 @@ class _ReviewCardState extends State<ReviewCard> {
                                       if (success) {
                                         Navigator.pop(context);
                                         double newRating = 0;
-                                        int newReviewCount = widget.pointer
+                                        int newReviewCount = widget.reviewData
                                                 .updatedData['review_count'] -
                                             1;
                                         List reviews = widget
-                                            .pointer.updatedData['reviews'];
+                                            .reviewData.updatedData['reviews'];
 
                                         reviews.removeAt(widget.index);
                                         for (int i = 0;
@@ -121,11 +121,11 @@ class _ReviewCardState extends State<ReviewCard> {
                                                 .toDouble()) /
                                             2.0;
                                         print(reviews);
-                                        widget.pointer.updatedData['reviews'] =
+                                        widget.reviewData.updatedData['reviews'] =
                                             reviews;
-                                        widget.pointer.updatedData['rating'] =
+                                        widget.reviewData.updatedData['rating'] =
                                             newRating;
-                                        widget.pointer
+                                        widget.reviewData
                                                 .updatedData['review_count'] =
                                             newReviewCount;
                                       }

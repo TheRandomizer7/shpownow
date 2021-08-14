@@ -2,9 +2,9 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shpownow/custom_widgets/product_cart_card.dart';
-import 'package:shpownow/pages/cart.dart';
 import 'package:shpownow/pages/login.dart';
 import 'package:shpownow/pages/product.dart';
+import 'package:shpownow/services/custom%20classes/item_data_in_cart.dart';
 import 'package:shpownow/services/flutter_services/authentication.dart';
 import 'package:shpownow/services/store_api.dart';
 

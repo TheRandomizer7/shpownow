@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shpownow/pages/cart.dart';
+import 'package:shpownow/services/custom%20classes/item_data_in_cart.dart';
 import 'package:shpownow/services/flutter_services/firestore.dart';
 
 class ProductCartCard extends StatefulWidget {

@@ -7,7 +7,6 @@ class SearchBarCard extends StatelessWidget {
   final int reviewCount;
   final double rating;
   final int id;
-  final double price;
 
   SearchBarCard({
     required this.title,
@@ -15,7 +14,6 @@ class SearchBarCard extends StatelessWidget {
     required this.reviewCount,
     required this.rating,
     required this.id,
-    required this.price,
   });
 
   @override
