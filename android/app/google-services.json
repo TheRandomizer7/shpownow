@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "305071849990",
+    "project_id": "shpownow",
+    "storage_bucket": "shpownow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305071849990:android:c2ac3a1d6b065b8c7e7987",
+        "android_client_info": {
+          "package_name": "com.randomizer.shpownow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305071849990-ac58qjkb5pi6cc8j817mh6fa7e4eik24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiYi6Bw0hN8z0XGUZkUje5SPuJyaongCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305071849990-ac58qjkb5pi6cc8j817mh6fa7e4eik24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
