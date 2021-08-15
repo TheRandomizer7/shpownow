@@ -120,7 +120,6 @@ class _ReviewCardState extends State<ReviewCard> {
                                                 .round()
                                                 .toDouble()) /
                                             2.0;
-                                        print(reviews);
                                         widget.reviewData.updatedData['reviews'] =
                                             reviews;
                                         widget.reviewData.updatedData['rating'] =
@@ -128,6 +127,7 @@ class _ReviewCardState extends State<ReviewCard> {
                                         widget.reviewData
                                                 .updatedData['review_count'] =
                                             newReviewCount;
+                                        Navigator.pop(context);
                                       }
                                     },
                                   ),

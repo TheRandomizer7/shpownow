@@ -53,8 +53,6 @@ class _ProductState extends State<Product> {
             border: Border.all(width: 3.0, color: Colors.white),
             borderRadius: BorderRadius.all(Radius.circular(30.0))),
         padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-        // padding: EdgeInsets.only(
-        //     bottom: MediaQuery.of(context).viewInsets.bottom),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,

@@ -2,9 +2,30 @@
  This is a simple shopping app created in flutter and made for handling data of small data sizes, not meant for handling huge amount of product/item data. You can test out the debug version of the app [here](https://appetize.io/app/c9dhavkpzdg34yw17wb0b82pfg?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
  
  
-For the release apk files of the app, [click here](https://github.com/TheRandomizer7/shpownow/tree/master/release)
+For the release apk files of the app, [click here](https://github.com/TheRandomizer7/shpownow/tree/master/release%20apks)
 
 ## Features overview
+* User authentication using email id, password and using google.
+* login page has 3 buttons, 'sign up' leads to the sign up page using email id. The login, authenticates the user. The google sign in button logs in the user, with the help of google.
+* google sign in gives the user the same username as the username in google (you cannot add a different username).
+* the sign in page, allows the user to enter the username, email and password.
+* If during a google sign in, there already exists a user logged in with the same email id, the username given by the user, during the sign up proccess, overrides the google username. Also all the data in the database remains the same. But, the user can no longer sign in using email id and password. (because that data is not stored in the database)
+* Toast messages for errors/ wrong password/ weak password etc, are shown through out the app.
+* The whole app is designed such that, if there is are new products in the website API call, the app will automatically add the new products to the database and everything should work as intended, however, this is not tested. (The only test that was done was to delete the whole database and then reopening the application and everything worked fine)
+* There are also animations throughout the application which add a good feel while using the application. (used a premade animations package, animations were not made from scratch, except one animation between the login and signup pages)
+* home screen shows a list of all products.
+* Products can be filtered on various factors, one, the category that the product belongs to. There is a specific button which allows the user to select different categories. two, the search query. There is a search bar in which the app searches all the products and shows results of products whose titles contains the search query.
+* On every product card tap, the application shows a product page which contain all the data related to the product including reviews and ratings.
+* On the product page, the user can add item to cart, add review, delete a review (only reviews posted by the logged in user, can be deleted), and also every product page has a category button which shows the category of the product. By clicking on this button, will reroute you to the home page, where the user will be showed all the products that belong to the category that was just clicked.
+* All data like reviews, items in cart, number of items in cart, are dynamically updated as soon as any change is detected.
+* Items added to cart will be displayed in the cart which the user can go to, by clicking on the cart icon on the app bar in the home page.
+* In the cart page, user can change the number of items of a particular product, the user can also delete items from the cart. If the user is satisfied with his cart, 'proceed to checkout' is pressed, where the pricing information is shown along with the total cost.
+* After clicking 'proceed to checkout', a new button is shown 'buy now'. After clicking this button the user is rerouted to the products page and all the items are cleared from the cart and are added to the user info page.
+* The user info page, like the cart page can be accessed using a button in the app bar of the home page.
+* In the user info page, user data is shown like the username, number of purchases and purchase history, along with relevent data like number of products purchased and date of purchase.
+* The user can also sign out in this page, and then is re routed to the login page if the sign out was successful.
+* There are also small things added to ensure the stability of the app, such as, if the API call was not successful or there was some error in fetching the user data, the user is automatically signed out of the application.
+* There is a refresh indicator in the home page which syncs all changes made in the database, with the application. Currently, app automatically updates only those changes that are made locally.
  
 ## Project structure
 ### Application pages
@@ -34,7 +55,7 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
     * Takes this data from StoreProducts and database. [See API calls](#api-calls)
     * User can add and delete reviews that are posted by the user that is currently logged in.
     * User can add items to cart.
-    * 'Add review' displays a dialog box through which the user can post the review, this dialog box uses the spinkit package. [See external packages](#external-packages-used)
+    * 'Add review' displays a dialog box through which the user can post the review, this dialog box uses the rating bar package. [See external packages](#external-packages-used)
     * Uses the review card widget. [See custom widgets](#custom-widgets) 
 7) products_page.dart
     * Contains a stack view containing a list view of all products (and filters), and a search bar.
@@ -55,6 +76,11 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
     * User can sign out here, taken to the login screen right after
     * User can also view number of purchases and all purchase related data here
     * uses the product cart card widget. [See custom widgets](#custom-widgets)
+
+### Database structure
+2 collections, 'Products' and 'Users'.
+1) 'Products' collection has documents of every product. Every product's document name is it's product id which is taken from the API call to the website where product data is stored. Data stored in database is, rating of product, review count of product and a list of maps containing reviews of all the users. Every review is unique (seperated by uid of user, which is also used to determine if the review can be deleted by the current user or not).
+2) 'Users' collection has documents of every user. Every user's document name is the user's uid, which is taken when the user is signed up or when signed in with google. Data stored is, items in cart, number of purchases, and purchase history which is a list of maps. Date of purchase is stored, which seperates different purchases in the UI.
 
 ### Custom classes/services
 #### Classes created to act like pointers
