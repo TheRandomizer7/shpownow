@@ -27,6 +27,8 @@ class StoreProducts{
 
     await checkIfProductsInitialized();
 
+    allProductData = [];
+
     for(int i = 0; i < products.length; i++){
       FirestoreObject firestoreObject = FirestoreObject();
       Map data = products[i];
