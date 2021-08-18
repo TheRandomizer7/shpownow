@@ -1,5 +1,5 @@
 # shpownow
- This is a simple shopping app created in flutter and made for handling data of small data sizes, not meant for handling huge amount of product/item data. You can test out the debug version of the app [here](https://appetize.io/app/c9dhavkpzdg34yw17wb0b82pfg?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
+ This is a simple shopping app created in flutter and made for handling data of small data sizes, not meant for handling huge amount of product/item data. You can test out the debug version of the app [here](https://appetize.io/app/7eye82rvnqydp2u6gppkyrpg7r?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
  
  
 For the release apk files of the app, [click here](https://github.com/TheRandomizer7/shpownow/tree/master/release%20apks)
