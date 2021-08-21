@@ -94,19 +94,35 @@ class _ProductCartCardState extends State<ProductCartCard> {
                                 context: context,
                                 builder: (context) {
                                   return AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
                                     title: Text(
                                       'Confirm action',
                                       style: TextStyle(
                                         color: Colors.grey[800],
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w800,
                                       ),
                                     ),
                                     content: Text(
                                       'This will remove this item from your cart permanently, are you sure you want to proceed?',
-                                      style: TextStyle(color: Colors.grey[600]),
+                                      style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w800,
+                                      ),
                                     ),
                                     actions: [
                                       TextButton(
-                                        child: Text('Delete'),
+                                        child: Text(
+                                          'Delete',
+                                          style: TextStyle(
+                                            color: Colors.red[600],
+                                            fontFamily: 'Roboto',
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
                                         onPressed: () async {
                                           FirestoreObject firestoreObject =
                                               FirestoreObject();
@@ -129,11 +145,36 @@ class _ProductCartCardState extends State<ProductCartCard> {
                                             widget.itemDataInCart.length.value =
                                                 widget
                                                     .itemDataInCart.data.length;
+                                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                            ScaffoldMessenger.of(context).showSnackBar(
+                                              SnackBar(
+                                                content: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'Item deleted from cart.',
+                                                      style: TextStyle(
+                                                        fontSize: 17.0,
+                                                        fontFamily: 'Roboto',
+                                                        fontWeight: FontWeight.w800,
+                                                      ),
+                                                    ),
+                                                  ]
+                                                ),
+                                              )
+                                            );
                                           }
                                         },
                                       ),
                                       TextButton(
-                                        child: Text('Cancel'),
+                                        child: Text(
+                                          'Cancel',
+                                          style: TextStyle(
+                                            color: Colors.blue[600],
+                                            fontFamily: 'Roboto',
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },

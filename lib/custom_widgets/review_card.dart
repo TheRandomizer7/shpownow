@@ -80,19 +80,34 @@ class _ReviewCardState extends State<ReviewCard> {
                             context: context,
                             builder: (context) {
                               return AlertDialog(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 title: Text(
                                   'Confirm action',
                                   style: TextStyle(
                                     color: Colors.grey[800],
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w800,
                                   ),
                                 ),
                                 content: Text(
                                   'This will delete your review permanently, are you sure you want to proceed?',
-                                  style: TextStyle(color: Colors.grey[600]),
+                                  style: TextStyle(
+                                    color: Colors.grey[600],
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
                                 actions: [
                                   TextButton(
-                                    child: Text('Delete'),
+                                    child: Text(
+                                      'Delete',
+                                      style: TextStyle(
+                                        color: Colors.red[600],
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
                                     onPressed: () async {
                                       FirestoreObject firestoreObject =
                                           FirestoreObject();
@@ -120,19 +135,44 @@ class _ReviewCardState extends State<ReviewCard> {
                                                 .round()
                                                 .toDouble()) /
                                             2.0;
-                                        widget.reviewData.updatedData['reviews'] =
-                                            reviews;
-                                        widget.reviewData.updatedData['rating'] =
-                                            newRating;
+                                        widget.reviewData
+                                            .updatedData['reviews'] = reviews;
+                                        widget.reviewData
+                                            .updatedData['rating'] = newRating;
                                         widget.reviewData
                                                 .updatedData['review_count'] =
                                             newReviewCount;
                                         Navigator.pop(context);
+                                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          SnackBar(
+                                            content: Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Review deleted.',
+                                                  style: TextStyle(
+                                                    fontSize: 17.0,
+                                                    fontFamily: 'Roboto',
+                                                    fontWeight: FontWeight.w800,
+                                                  ),
+                                                ),
+                                              ]
+                                            ),
+                                          )
+                                        );
                                       }
                                     },
                                   ),
                                   TextButton(
-                                    child: Text('Cancel'),
+                                    child: Text(
+                                      'Cancel',
+                                      style: TextStyle(
+                                        color: Colors.blue[600],
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
                                     onPressed: () {
                                       Navigator.pop(context);
                                     },

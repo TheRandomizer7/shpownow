@@ -324,7 +324,29 @@ class _CartPageState extends State<CartPage> {
                             if (success) {
                               priceVisible = false;
                               Navigator.pop(context);
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => Loading()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Loading()));
+                              showDialog(
+                                barrierDismissible: false,
+                                context: context,
+                                builder: (context) {
+                                  Future.delayed(Duration(seconds: 4), () {
+                                    Navigator.of(context).pop(true);
+                                  });
+                                  return AlertDialog(
+                                    backgroundColor: Color(0xff003241),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                    content: Image.asset(
+                                      'assets/check mark.gif',
+                                      width: MediaQuery.of(context).size.width,
+                                    ),
+                                  );
+                                },
+                              );
                             }
                           },
                         ),

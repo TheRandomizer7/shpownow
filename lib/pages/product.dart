@@ -382,9 +382,23 @@ class _ProductState extends State<Product> {
                           bool success = await firestoreObject.addProductToCart(
                               data['uid'], data['id']);
                           if (success) {
-                            Fluttertoast.showToast(
-                              msg: 'Item added to cart',
-                              toastLength: Toast.LENGTH_SHORT,
+                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Item added to cart.',
+                                      style: TextStyle(
+                                        fontSize: 17.0,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                  ]
+                                ),
+                              )
                             );
                           }
                         },
