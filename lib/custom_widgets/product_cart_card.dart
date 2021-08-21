@@ -70,14 +70,16 @@ class _ProductCartCardState extends State<ProductCartCard> {
                     children: [
                       Container(
                         width: MediaQuery.of(context).size.width * 0.375,
-                        child: Text(
-                          widget.title,
-                          style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 2.0,
-                            color: Colors.grey[800],
+                        child: Flexible(
+                          child: Text(
+                            widget.title,
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 2.0,
+                              color: Colors.grey[800],
+                            ),
                           ),
                         ),
                       ),
