@@ -1,8 +1,8 @@
 # shpownow
- This is a simple shopping app created in flutter and made for handling data of small data sizes, not meant for handling huge amount of product/item data. You can test out the debug version of the app [here](https://appetize.io/app/7eye82rvnqydp2u6gppkyrpg7r?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
+ This is a simple shopping app created in flutter and made for handling data of small data sizes, not meant for handling huge amount of product/item data. You can test out the debug version of the app [here](https://appetize.io/app/atct3nhuqa7ey6azjcxrvq0bqr?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
  
  
-For the release apk files of the app, [click here](https://appetize.io/app/rwytn8nwx3wt1mwmvmq8r8dy4w?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
+For the release apk files of the app, [click here](https://github.com/TheRandomizer7/shpownow/tree/master/release%20apks)
 
 ## Features overview
 * User authentication using email id, password and using google.
@@ -13,6 +13,8 @@ For the release apk files of the app, [click here](https://appetize.io/app/rwytn
 * Toast messages for errors/ wrong password/ weak password etc, are shown through out the app.
 * The whole app is designed such that, if there is are new products in the website API call, the app will automatically add the new products to the database and everything should work as intended, however, this is not tested. (The only test that was done was to delete the whole database and then reopening the application and everything worked fine)
 * There are also animations throughout the application which add a good feel while using the application. (used a premade animations package, animations were not made from scratch, except one animation between the login and signup pages)
+* home screen has an app bar at the top which has 3 buttons which lets the user switch between the cart page, the user page, and the products page (I will refer to this as the home screen).
+* If the user presses 'back button' on a cart page / user page, it will be redirected to the home screen. If on the home screen, the user presses 'back button' then there will be a confirmation dialog and then the user can exit the application
 * home screen shows a list of all products.
 * Products can be filtered on various factors, one, the category that the product belongs to. There is a specific button which allows the user to select different categories. two, the search query. There is a search bar in which the app searches all the products and shows results of products whose titles contains the search query.
 * On every product card tap, the application shows a product page which contain all the data related to the product including reviews and ratings.
