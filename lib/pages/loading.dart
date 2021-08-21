@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shpownow/pages/home.dart';
+import 'package:shpownow/pages/login.dart';
 import 'package:shpownow/services/flutter_services/authentication.dart';
 import 'package:shpownow/services/store_api.dart';
 
@@ -16,19 +17,16 @@ class _LoadingState extends State<Loading> {
   void loadAllData() async {
     try {
       await storeProducts.initializeStoreProducts();
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Home(
-            storeProducts: storeProducts,
-            whatToLoad: 'products_page',
-          ),
-        ),
-      );
+      Navigator.of(context).pushReplacement(PageRouteBuilder(
+        transitionDuration: Duration(seconds: 0),
+        pageBuilder: (context, animation, animation2) =>
+            Home(whatToLoad: 'products_page', storeProducts: storeProducts),
+      ));
     } catch (e) {
       AuthObject authObject = AuthObject();
       await authObject.signOut();
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Loading()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => LoginPage()));
       Fluttertoast.showToast(
         msg: 'The API call was not successful/database was reset',
         toastLength: Toast.LENGTH_LONG,
@@ -126,12 +124,9 @@ class _LoadingState extends State<Loading> {
           appBar: AppBar(
             title: Row(
               children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.grey[800],
-                  ),
-                  onPressed: () {},
+                Icon(
+                  Icons.shopping_basket,
+                  color: Colors.grey[800],
                 ),
                 SizedBox(
                   width: 20.0,

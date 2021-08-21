@@ -21,7 +21,7 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
-  ReviewData reviewData= ReviewData(null);
+  ReviewData reviewData = ReviewData(null);
   @override
   Widget build(BuildContext context) {
     Map data = widget.data;
@@ -168,6 +168,21 @@ class _ProductState extends State<Product> {
                       data['id'],
                       data['uid']);
                   if (success) {
+                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Review added',
+                              style: TextStyle(
+                                fontSize: 17.0,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ]),
+                    ));
                     Navigator.pop(context);
                     setState(() {
                       List reviews = data['reviews'];
@@ -383,23 +398,20 @@ class _ProductState extends State<Product> {
                               data['uid'], data['id']);
                           if (success) {
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Row(
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      'Item added to cart.',
+                                      'Item added to cart',
                                       style: TextStyle(
                                         fontSize: 17.0,
                                         fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.w400,
                                       ),
                                     ),
-                                  ]
-                                ),
-                              )
-                            );
+                                  ]),
+                            ));
                           }
                         },
                       ),

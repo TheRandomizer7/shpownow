@@ -132,7 +132,9 @@ class _LoginPageState extends State<LoginPage> {
                   bool loggedIn = await authObject.login(
                       _emailField.text, _passwordField.text);
                   if (loggedIn) {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Loading()));
+                    Navigator.of(context).pushReplacement(PageRouteBuilder(
+                        pageBuilder: (context, animation, animation2) =>
+                            Loading()));
                   }
                 },
                 child: Text(
@@ -186,7 +188,9 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () async {
                   bool loggedIn = await authObject.signInWithGoogle();
                   if (loggedIn) {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Loading()));
+                    Navigator.of(context).pushReplacement(PageRouteBuilder(
+                        pageBuilder: (context, animation, animation2) =>
+                            Loading()));
                   }
                 },
                 child: Ink(

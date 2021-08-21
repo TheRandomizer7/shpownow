@@ -324,15 +324,16 @@ class _CartPageState extends State<CartPage> {
                             if (success) {
                               priceVisible = false;
                               Navigator.pop(context);
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Loading()));
+                              Navigator.of(context).push(PageRouteBuilder(
+                                  transitionDuration: Duration(seconds: 0),
+                                  pageBuilder:
+                                      (context, animation, animation2) =>
+                                          Loading()));
                               showDialog(
                                 barrierDismissible: false,
                                 context: context,
                                 builder: (context) {
-                                  Future.delayed(Duration(seconds: 4), () {
+                                  Future.delayed(Duration(seconds: 3), () {
                                     Navigator.of(context).pop(true);
                                   });
                                   return AlertDialog(

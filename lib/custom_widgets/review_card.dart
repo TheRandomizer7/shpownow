@@ -143,24 +143,24 @@ class _ReviewCardState extends State<ReviewCard> {
                                                 .updatedData['review_count'] =
                                             newReviewCount;
                                         Navigator.pop(context);
-                                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                        ScaffoldMessenger.of(context).showSnackBar(
-                                          SnackBar(
-                                            content: Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
+                                        ScaffoldMessenger.of(context)
+                                            .hideCurrentSnackBar();
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(SnackBar(
+                                          content: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  'Review deleted.',
+                                                  'Review deleted',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
                                                     fontFamily: 'Roboto',
-                                                    fontWeight: FontWeight.w800,
+                                                    fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
-                                              ]
-                                            ),
-                                          )
-                                        );
+                                              ]),
+                                        ));
                                       }
                                     },
                                   ),

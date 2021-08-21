@@ -68,18 +68,15 @@ class _ProductCartCardState extends State<ProductCartCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.375,
-                        child: Flexible(
-                          child: Text(
-                            widget.title,
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 2.0,
-                              color: Colors.grey[800],
-                            ),
+                      Flexible(
+                        child: Text(
+                          widget.title,
+                          style: TextStyle(
+                            fontFamily: 'Roboto',
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 2.0,
+                            color: Colors.grey[800],
                           ),
                         ),
                       ),
@@ -147,24 +144,25 @@ class _ProductCartCardState extends State<ProductCartCard> {
                                             widget.itemDataInCart.length.value =
                                                 widget
                                                     .itemDataInCart.data.length;
-                                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                            ScaffoldMessenger.of(context).showSnackBar(
-                                              SnackBar(
-                                                content: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                            ScaffoldMessenger.of(context)
+                                                .hideCurrentSnackBar();
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(SnackBar(
+                                              content: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      'Item deleted from cart.',
+                                                      'Item deleted from cart',
                                                       style: TextStyle(
                                                         fontSize: 17.0,
                                                         fontFamily: 'Roboto',
-                                                        fontWeight: FontWeight.w800,
+                                                        fontWeight:
+                                                            FontWeight.w400,
                                                       ),
                                                     ),
-                                                  ]
-                                                ),
-                                              )
-                                            );
+                                                  ]),
+                                            ));
                                           }
                                         },
                                       ),

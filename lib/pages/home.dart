@@ -56,60 +56,67 @@ class _HomeState extends State<Home> {
 
     return WillPopScope(
       onWillPop: () async {
-        final value = await showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                title: Text(
-                  'Confirm action',
-                  style: TextStyle(
-                    color: Colors.grey[800],
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w800,
+        if (whatToLoad == 'products_page') {
+          final value = await showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                ),
-                content: Text(
-                  'Are you sure you want to exit the application?',
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                actions: [
-                  TextButton(
-                    child: Text(
-                      'Yes, exit application',
-                      style: TextStyle(
-                        color: Colors.red[600],
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w800,
-                      ),
+                  title: Text(
+                    'Confirm action',
+                    style: TextStyle(
+                      color: Colors.grey[800],
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w800,
                     ),
-                    onPressed: () async {
-                      Navigator.of(context).pop(true);
-                    },
                   ),
-                  TextButton(
-                    child: Text(
-                      'Cancel',
-                      style: TextStyle(
-                        color: Colors.blue[600],
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w800,
-                      ),
+                  content: Text(
+                    'Are you sure you want to exit the application?',
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w800,
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  )
-                ],
-              );
-            });
-        return value == true;
+                  ),
+                  actions: [
+                    TextButton(
+                      child: Text(
+                        'Yes, exit application',
+                        style: TextStyle(
+                          color: Colors.red[600],
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      onPressed: () async {
+                        Navigator.of(context).pop(true);
+                      },
+                    ),
+                    TextButton(
+                      child: Text(
+                        'Cancel',
+                        style: TextStyle(
+                          color: Colors.blue[600],
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    )
+                  ],
+                );
+              });
+          return value == true;
+        } else {
+          setState(() {
+            whatToLoad = 'products_page';
+          });
+          return false;
+        }
       },
       child: GestureDetector(
         //try at handling swiping gesture
