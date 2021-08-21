@@ -113,6 +113,7 @@ class _HomeState extends State<Home> {
           return value == true;
         } else {
           setState(() {
+            leftToRight = !leftToRight;
             whatToLoad = 'products_page';
           });
           return false;
