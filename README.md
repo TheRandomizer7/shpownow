@@ -2,7 +2,7 @@
  This is a simple shopping app created in flutter and made for handling data of small data sizes, not meant for handling huge amount of product/item data. You can test out the debug version of the app [here](https://appetize.io/app/7eye82rvnqydp2u6gppkyrpg7r?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
  
  
-For the release apk files of the app, [click here](https://github.com/TheRandomizer7/shpownow/tree/master/release%20apks)
+For the release apk files of the app, [click here](https://appetize.io/app/rwytn8nwx3wt1mwmvmq8r8dy4w?device=nexus5&scale=75&orientation=portrait&osVersion=8.1)
 
 ## Features overview
 * User authentication using email id, password and using google.
