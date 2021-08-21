@@ -129,14 +129,16 @@ class _CartPageState extends State<CartPage> {
                               SizedBox(
                                 width: 30.0,
                               ),
-                              Text(
-                                'Proceed to checkout',
-                                style: TextStyle(
-                                  fontSize: 23.0,
-                                  fontFamily: 'Roboto',
-                                  letterSpacing: 2.0,
-                                  color: Colors.red[300],
-                                  fontWeight: FontWeight.w800,
+                              Flexible(
+                                child: Text(
+                                  'Proceed to checkout',
+                                  style: TextStyle(
+                                    fontSize: 23.0,
+                                    fontFamily: 'Roboto',
+                                    letterSpacing: 2.0,
+                                    color: Colors.red[300],
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
                               ),
                             ],
