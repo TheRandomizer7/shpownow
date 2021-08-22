@@ -228,12 +228,9 @@ class _ProductState extends State<Product> {
         appBar: AppBar(
           title: Row(
             children: [
-              IconButton(
-                icon: Icon(
-                  Icons.person,
-                  color: Colors.grey[800],
-                ),
-                onPressed: () {},
+              Icon(
+                Icons.shopping_basket,
+                color: Colors.grey[800],
               ),
               SizedBox(
                 width: 20.0,
@@ -254,7 +251,7 @@ class _ProductState extends State<Product> {
                     fontFamily: 'Roboto',
                     color: Colors.grey[800],
                     fontWeight: FontWeight.w800),
-              ),
+              )
             ],
           ),
           backgroundColor: Colors.deepOrange[300],
