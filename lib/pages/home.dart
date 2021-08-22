@@ -57,7 +57,10 @@ class _HomeState extends State<Home> {
     return WillPopScope(
       onWillPop: () async {
         if (whatToLoad == 'products_page') {
-          final value = await showDialog(
+          final value = await showModal(
+              configuration: FadeScaleTransitionConfiguration(
+                transitionDuration: Duration(milliseconds: 300),
+              ),
               context: context,
               builder: (context) {
                 return AlertDialog(

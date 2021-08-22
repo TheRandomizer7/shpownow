@@ -143,14 +143,69 @@ class _UserInfoPageState extends State<UserInfoPage> {
                             ],
                           )),
                       onPressed: () async {
-                        AuthObject authObject = AuthObject();
-                        bool success = await authObject.signOut();
-                        if (success) {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginPage()));
-                        }
+                        await showModal(
+                            configuration: FadeScaleTransitionConfiguration(
+                              transitionDuration: Duration(milliseconds: 300),
+                            ),
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                title: Text(
+                                  'Confirm action',
+                                  style: TextStyle(
+                                    color: Colors.grey[800],
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                content: Text(
+                                  'Are you sure you want to sign out?',
+                                  style: TextStyle(
+                                    color: Colors.grey[600],
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                actions: [
+                                  TextButton(
+                                    child: Text(
+                                      'Yes, sign out',
+                                      style: TextStyle(
+                                        color: Colors.red[600],
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                    onPressed: () async {
+                                      AuthObject authObject = AuthObject();
+                                      bool success = await authObject.signOut();
+                                      if (success) {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LoginPage()));
+                                      }
+                                    },
+                                  ),
+                                  TextButton(
+                                    child: Text(
+                                      'Cancel',
+                                      style: TextStyle(
+                                        color: Colors.blue[600],
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                  )
+                                ],
+                              );
+                            });
                       },
                     ),
                   ),

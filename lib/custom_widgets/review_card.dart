@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:shpownow/custom_widgets/star_rating_bar.dart';
 import 'package:shpownow/services/custom%20classes/review_data.dart';
@@ -76,7 +77,10 @@ class _ReviewCardState extends State<ReviewCard> {
                         color: Colors.red,
                       ),
                       onPressed: () async {
-                        await showDialog(
+                        await showModal(
+                            configuration: FadeScaleTransitionConfiguration(
+                              transitionDuration: Duration(milliseconds: 300),
+                            ),
                             context: context,
                             builder: (context) {
                               return AlertDialog(

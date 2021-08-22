@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:shpownow/services/custom%20classes/item_data_in_cart.dart';
 import 'package:shpownow/services/flutter_services/firestore.dart';
@@ -89,7 +90,10 @@ class _ProductCartCardState extends State<ProductCartCard> {
                             size: 20.0,
                           ),
                           onPressed: () async {
-                            await showDialog(
+                            await showModal(
+                                configuration: FadeScaleTransitionConfiguration(
+                                    transitionDuration:
+                                        Duration(milliseconds: 300)),
                                 context: context,
                                 builder: (context) {
                                   return AlertDialog(
