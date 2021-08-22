@@ -34,7 +34,10 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
 * There is a refresh indicator in the home page which syncs all changes made in the database, with the application. Currently, app automatically updates only those changes that are made locally.
 
 ## Known issues
-1) Snackbars not showing sometimes, no idea what is causing this.
+1) Snackbars not showing sometimes (rare), no idea what is causing this.
+
+## Tried things that were not added in the final app
+1) Loading screens after every time product data is shown. Every time API calls were made and all data was consistent at all times. But due to the slowness of the app due to all the loading screens, I removed every single loading screen except the first one and the app handles all data locally until the refresh indicator is triggered
  
 ## Project structure
 ### Application pages
