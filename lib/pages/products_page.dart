@@ -231,6 +231,9 @@ class _ProductsPageState extends State<ProductsPage> {
                 size: 20.0,
               ),
             ),
+            FloatingSearchBarAction.back(
+              showIfClosed: false,
+            )
           ],
           builder: (context, transition) {
             return Container(

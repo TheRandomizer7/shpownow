@@ -356,6 +356,9 @@ class _CartPageState extends State<CartPage> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
                 ],
               ),
             );
