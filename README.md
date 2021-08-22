@@ -32,6 +32,9 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
 * The user can also sign out in this page, and then is re routed to the login page if the sign out was successful.
 * There are also small things added to ensure the stability of the app, such as, if the API call was not successful or there was some error in fetching the user data, the user is automatically signed out of the application.
 * There is a refresh indicator in the home page which syncs all changes made in the database, with the application. Currently, app automatically updates only those changes that are made locally.
+
+## Known issues
+1) Snackbars not showing sometimes, no idea what is causing this.
  
 ## Project structure
 ### Application pages
