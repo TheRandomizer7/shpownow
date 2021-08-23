@@ -161,7 +161,7 @@ class _ProductState extends State<Product> {
                 ),
                 onPressed: () async {
                   bool success = await firestoreObject.addProductReview(
-                      _reviewText.text,
+                      _reviewText.text.trim(),
                       customerRating,
                       data['username'],
                       data['id'],
@@ -186,7 +186,7 @@ class _ProductState extends State<Product> {
                     setState(() {
                       List reviews = data['reviews'];
                       reviews.add({
-                        'review_text': _reviewText.text,
+                        'review_text': _reviewText.text.trim(),
                         'rating': customerRating,
                         'username': data['username'],
                         'uid': data['uid'],
