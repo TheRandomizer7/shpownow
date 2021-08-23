@@ -23,9 +23,9 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(
-              Icons.shopping_basket,
-              color: Colors.grey[800],
+            Image.asset(
+              'assets/Shpownow logo.png',
+              width: 45.0,
             ),
             SizedBox(
               width: 20.0,
@@ -200,9 +200,10 @@ class _SignUpPageState extends State<SignUpPage> {
                         Navigator.pop(context);
                       } else {
                         Fluttertoast.showToast(
-                        msg: 'Something went really wrong, and you may not be able to use your account. Fix your account by signing in with a google account of the same email',
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.BOTTOM);
+                            msg:
+                                'Something went really wrong, and you may not be able to use your account. Fix your account by signing in with a google account of the same email',
+                            toastLength: Toast.LENGTH_LONG,
+                            gravity: ToastGravity.BOTTOM);
                       }
                     }
                   } else {

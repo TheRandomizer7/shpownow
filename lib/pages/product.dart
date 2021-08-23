@@ -1,7 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shpownow/custom_widgets/review_card.dart';
 import 'package:shpownow/custom_widgets/star_rating_bar.dart';
 import 'package:shpownow/services/custom%20classes/review_data.dart';
@@ -228,9 +227,9 @@ class _ProductState extends State<Product> {
         appBar: AppBar(
           title: Row(
             children: [
-              Icon(
-                Icons.shopping_basket,
-                color: Colors.grey[800],
+              Image.asset(
+                'assets/Shpownow logo.png',
+                width: 45.0,
               ),
               SizedBox(
                 width: 20.0,

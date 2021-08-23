@@ -182,6 +182,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                                       AuthObject authObject = AuthObject();
                                       bool success = await authObject.signOut();
                                       if (success) {
+                                        Navigator.pop(context);
                                         Navigator.pushReplacement(
                                             context,
                                             MaterialPageRoute(

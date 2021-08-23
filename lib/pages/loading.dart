@@ -124,9 +124,9 @@ class _LoadingState extends State<Loading> {
           appBar: AppBar(
             title: Row(
               children: [
-                Icon(
-                  Icons.shopping_basket,
-                  color: Colors.grey[800],
+                Image.asset(
+                  'assets/Shpownow logo.png',
+                  width: 45.0,
                 ),
                 SizedBox(
                   width: 20.0,
