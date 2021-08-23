@@ -121,34 +121,58 @@ class _ProductsPageState extends State<ProductsPage> {
             if (index == 0) {
               return Padding(
                 padding: EdgeInsets.fromLTRB(15.0, 75.0, 15.0, 10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Column(
                   children: [
-                    Flexible(
-                      child: Text(
-                        'showing: ${storeProducts.productsToLoad.value == 'allProducts' ? 'all products' : storeProducts.productsToLoad.value}',
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 17.0,
-                          letterSpacing: 2.0,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                    ),
-                    MaterialButton(
-                      onPressed: () {
-                        showModal(
-                            configuration: FadeScaleTransitionConfiguration(
-                              transitionDuration: Duration(milliseconds: 300),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            'showing: ${storeProducts.productsToLoad.value == 'allProducts' ? 'all products' : storeProducts.productsToLoad.value}',
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 17.0,
+                              letterSpacing: 2.0,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w800,
                             ),
-                            context: context,
-                            builder: (context) => filtersDialog);
-                      },
-                      color: Colors.blue[400],
-                      child: Icon(
-                        Icons.filter_list,
-                        color: Colors.white,
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            showModal(
+                                configuration: FadeScaleTransitionConfiguration(
+                                  transitionDuration:
+                                      Duration(milliseconds: 300),
+                                ),
+                                context: context,
+                                builder: (context) => filtersDialog);
+                          },
+                          color: Colors.blue[400],
+                          child: Icon(
+                            Icons.filter_list,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Visibility(
+                      visible: storeProducts.tempProductData.length == 0,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 30.0,
+                          ),
+                          Text(
+                          'No results for \'${storeProducts.productsToLoad.value}\' :(',
+                          style: TextStyle(
+                            fontFamily: 'Roboto',
+                            color: Colors.grey[600],
+                            letterSpacing: 2.0,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),],
                       ),
                     ),
                   ],
