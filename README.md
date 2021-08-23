@@ -17,10 +17,12 @@ For the release apk files of the app, [click here](https://github.com/TheRandomi
 * Also when the application boots up, the application checks if the user is signed in or not, if the user is signed in, then, the loading screen is shown. Otherwise, the Login page is shown.
 * home screen has an app bar at the top which has 3 buttons which lets the user switch between the cart page, the user page, and the products page (I will refer to this as the home screen).
 * If the user presses 'back button' on a cart page / user page, it will be redirected to the home screen. If on the home screen, the user presses 'back button' then there will be a confirmation dialog and then the user can exit the application
+* Other alert dialogs are also present in places where required
 * home screen shows a list of all products.
 * Products can be filtered on various factors, one, the category that the product belongs to. There is a specific button which allows the user to select different categories. two, the search query. There is a search bar in which the app searches all the products and shows results of products whose titles contains the search query.
 * On every product card tap, the application shows a product page which contain all the data related to the product including reviews and ratings.
 * On the product page, the user can add item to cart, add review, delete a review (only reviews posted by the logged in user, can be deleted)
+* If the user clicks on add to cart more than once, than the item count of the product increase with every subsequent click
 * Every product page has a category button which shows the category of the product. By clicking on this button, will reroute you to the home page, where the user will be showed all the products that belong to the category that was just clicked.
 * All data like reviews, items in cart, number of items in cart, are dynamically updated as soon as any change is detected.
 * Items added to cart will be displayed in the cart which the user can go to, by clicking on the cart icon on the app bar in the home page.
